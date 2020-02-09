@@ -17,9 +17,13 @@ def gauss_legendre(precision):
     return D(str(pi_calc)[0:-1])
 
 if __name__ == "__main__":
-    num = input("Please enter the precision you want:")
-    my_pi = str(gauss_legendre(int(num)))
-    print("Pi is approximately", my_pi)
-
+    while True:
+        num = input("Please enter the precision you want:")
+        if num.isdigit() and int(num) <= 1000:
+            num = int(num)
+            my_pi = str(gauss_legendre(num))
+            print("Pi is approximately", my_pi)
+            break
+        print("Please enter an integer between 0 and 1000.")
 
 
