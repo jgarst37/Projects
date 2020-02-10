@@ -30,7 +30,7 @@ def calc_e(precision):
     
 
 def print_e(precision):
-    """Prints pi to a precision without rounding
+    """Prints e to a precision without rounding
 
         Args:
             precision: number of digits to return after the decimal point
