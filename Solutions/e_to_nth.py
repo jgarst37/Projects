@@ -29,6 +29,14 @@ def calc_e(precision):
         n += 1
     
 
+def print_e(precision):
+    """Prints pi to a precision without rounding
+
+        Args:
+            precision: number of digits to return after the decimal point
+    """
+    my_e = str(calc_e(precision))
+    print("e is approximately", my_e)
 
 if __name__ == "__main__":
     """Prompts the user for an integer between 0 and 1000 and prints e to the specified number of digits after the decimal point"""
@@ -36,8 +44,7 @@ if __name__ == "__main__":
         num = input("Please enter the precision you want:")
         if num.isdigit() and int(num) <= 1000:
             num = int(num)
-            my_e = str(calc_e(num))
-            print("e is approximately", my_e)
+            print_e(num)
             break
         print("Please enter an integer between 0 and 1000.")
 

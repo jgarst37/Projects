@@ -32,14 +32,23 @@ def gauss_legendre(precision):
     return D(str(pi_calc)[0:-1])
 
 
+def print_pi(precision):
+    """Prints pi to a precision without rounding
+
+        Args:
+            precision: number of digits to return after the decimal point
+    """
+    my_pi = str(gauss_legendre(precision))
+    print("Pi is approximately", my_pi)
+
+
 if __name__ == "__main__":
     """Prompts the user for an integer between 0 and 1000 and prints pi to the specified number of digits after the decimal point"""
     while True:
         num = input("Please enter the precision you want:")
         if num.isdigit() and int(num) <= 1000:
             num = int(num)
-            my_pi = str(gauss_legendre(num))
-            print("Pi is approximately", my_pi)
+            print_pi(num)
             break
         print("Please enter an integer between 0 and 1000.")
 
